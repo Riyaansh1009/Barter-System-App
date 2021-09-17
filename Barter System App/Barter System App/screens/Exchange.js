@@ -62,7 +62,6 @@ export default class Exchange extends Component {
 
 
      
-    
      return Alert.alert(
           'Item ready to exchange',
           '',
@@ -90,9 +89,7 @@ export default class Exchange extends Component {
     })
   }
 
-  getExchangeRequest =()=>{
-    
-  var exchangeRequest=  db.collection('exchange_requests')
+  getExchangeRequest =()=>{  var exchangeRequest=  db.collection('exchange_requests')
     .where('username','==',this.state.userName)
     .get()
     .then((snapshot)=>{
@@ -188,6 +185,7 @@ getData(){
   render()
   {
     if (this.state.IsExchangeRequestActive === true){
+     
       return(
         <View style = {{flex:1,justifyContent:'center'}}>
          <View style={{borderColor:"orange",borderWidth:2,justifyContent:'center',alignItems:'center',padding:10,margin:10}}>

@@ -9,16 +9,16 @@ export default class ReceiverDetailsScreen extends Component{
   constructor(props){
     super(props);
     this.state={
-      userId          : firebase.auth().currentUser.email,
-      userName          :'',
-      receiverId      : this.props.navigation.getParam('details')["username"],
-      exchangeId       : this.props.navigation.getParam('details')["exchangeId"],
-      itemName        : this.props.navigation.getParam('details')["item_name"],
-      description  : this.props.navigation.getParam('details')["description"],
-      receiverName    : '',
-      receiverContact : '',
-      receiverAddress : '',
-      receiverRequestDocId : ''
+      userId: firebase.auth().currentUser.email,
+      userName:'',
+      receiverId: this.props.navigation.getParam('details')["username"],
+      exchangeId: this.props.navigation.getParam('details')["exchangeId"],
+      itemName: this.props.navigation.getParam('details')["item_name"],
+      description: this.props.navigation.getParam('details')["description"],
+      receiverName: '',
+      receiverContact: '',
+      receiverAddress: '',
+      receiverRequestDocId: ''
     }
   }
 
@@ -41,9 +41,9 @@ getreceiverDetails(){
   .then(snapshot=>{
     snapshot.forEach(doc=>{
       this.setState({
-        receiverName    : doc.data().first_name,
-        receiverContact : doc.data().mobile_number,
-        receiverAddress : doc.data().address,
+        receiverName: doc.data().first_name,
+        receiverContact: doc.data().mobile_number,
+        receiverAddress: doc.data().address,
       })
     })
   });
@@ -57,11 +57,11 @@ getreceiverDetails(){
 
 updateBarterStatus=()=>{
   db.collection('all_Barters').add({
-    item_name           : this.state.itemName,
-    exchange_id          : this.state.exchangeId,
-    requested_by        : this.state.receiverName,
-    donor_id            : this.state.userId,
-    request_status      :  "Donor Interested"
+    item_name: this.state.itemName,
+    exchange_id: this.state.exchangeId,
+    requested_by: this.state.receiverName,
+    donor_id: this.state.userId,
+    request_status:  "Donor Interested"
   })
 }
 

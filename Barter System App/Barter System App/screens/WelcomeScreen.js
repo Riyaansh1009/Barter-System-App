@@ -57,7 +57,6 @@ export default class WelcomeScreen extends Component {
          );
       })
       .catch(function(error) {
-      
         var errorCode = error.code;
         var errorMessage = error.message;
         return Alert.alert(errorMessage)
@@ -197,7 +196,6 @@ export default class WelcomeScreen extends Component {
           }
         </View>
         <View style={styles.profileContainer}>
-          {/* <BarterAnimation/> */}
           <Text style={styles.title}>Barter</Text>
           <Text style={{color:'#32867d'}}> A Trading Method </Text>
         </View>
@@ -262,12 +260,11 @@ const styles = StyleSheet.create({
   title :{
     fontSize:60,
     fontWeight:'300',
-    // fontFamily:'AvenirNext-Heavy',
     color : '#32867d'
   },
   loginBox:{
     width: 300,
-    height: 35,
+    height: 35, 
     borderBottomWidth: 1.5,
     borderColor:'#32867d',
     fontSize: 20,
